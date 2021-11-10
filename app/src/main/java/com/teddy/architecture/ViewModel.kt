@@ -2,11 +2,10 @@ package com.teddy.architecture
 
 import android.widget.Button
 
-class ViewModel {
-    private var activity: MainActivity
+class ViewModel(activity: MainActivity) {
+    private var activity: MainActivity = activity
     private lateinit var button: Button
-    constructor(activity: MainActivity){
-        this.activity = activity
+    init {
         initView()
     }
 
