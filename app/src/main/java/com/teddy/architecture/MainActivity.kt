@@ -4,13 +4,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.activity.viewModels
+import androidx.databinding.DataBindingUtil
+import com.teddy.architecture.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(){
     private lateinit var button: Button
-    private lateinit var viewModel: ViewModel
+    private lateinit var mBinding: ActivityMainBinding
+    private val viewModel: ViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        viewModel = ViewModel(this)
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+        mBinding.lifecycleOwner = this
+        mBinding.viewModel = viewModel
     }
 }

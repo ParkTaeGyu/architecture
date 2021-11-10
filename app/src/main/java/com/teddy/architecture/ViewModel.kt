@@ -1,18 +1,17 @@
 package com.teddy.architecture
 
+import android.app.Application
 import android.widget.Button
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.MutableLiveData
 
-class ViewModel(activity: MainActivity) {
-    private var activity: MainActivity = activity
-    private lateinit var button: Button
+class ViewModel(application: Application): AndroidViewModel(application) {
+    var count = MutableLiveData<Int>()
     init {
-        initView()
+        count.value = 0
     }
 
-    fun initView() {
-        button = activity.findViewById(R.id.btn_hello_world)
-        button.setOnClickListener {
-            button.text = Model().onButtonClicked()
-        }
+    fun increse() {
+        count.value = count.value?.inc()
     }
 }

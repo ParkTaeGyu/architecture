@@ -1,5 +1,7 @@
 package com.teddy.architecture
 
+import androidx.lifecycle.MutableLiveData
+
 class Model {
-    fun onButtonClicked() = "Button is Clicked"
+    fun onButtonClicked() = 1
 }
