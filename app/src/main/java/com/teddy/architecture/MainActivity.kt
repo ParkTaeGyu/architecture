@@ -9,7 +9,6 @@ import androidx.databinding.DataBindingUtil
 import com.teddy.architecture.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(){
-    private lateinit var button: Button
     private lateinit var mBinding: ActivityMainBinding
     private val viewModel: ViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
