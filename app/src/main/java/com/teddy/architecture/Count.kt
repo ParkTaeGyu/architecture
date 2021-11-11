@@ -7,7 +7,6 @@ import androidx.room.PrimaryKey
 @Entity
 data class Count(
     var count: Int,
-){
     @PrimaryKey
-    var id = 0
-}
+    var id: Int
+)
